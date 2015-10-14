@@ -14,7 +14,7 @@
  *
  *          (Signed)_____________________________________(Darren Lowe)
  *
- * Version: See VERSION below
+ * Version: See History below
  *
  **************************************************************************/
 
@@ -24,16 +24,14 @@
 #include <stdio.h>
 
 int main() {
-/* Add suitable variables here as part of Practial 1 */
-
 
 float executeTimeOnX = 10, executeTimeOnY = 15, cpuTimeOnX = 10, cpuTimeOnY = 6;
-
 float clockSpeedOnX = 2.00, clockSpeedOnY = ((1.2*clockSpeedOnX)*10)/cpuTimeOnY;
-
 float cycleTimeOnX = 250, cycleTimeOnY = 500, cpiOnX = 2, cpiOnY = 1.2;
 
+
 printf(VERSION);	
+
 
 printf("%.1fs on X, %.1fs on Y. So X is %.1fs times faster than Y\n\n", 
 executeTimeOnX, executeTimeOnY, (executeTimeOnY/executeTimeOnX));
@@ -41,11 +39,15 @@ executeTimeOnX, executeTimeOnY, (executeTimeOnY/executeTimeOnX));
 printf("X: %.1fGHz clock, %.1fs CPU time; Y: ?GHz clock, %.1fs CPU time. \n",
 clockSpeedOnX, cpuTimeOnX, cpuTimeOnY);
 
+
+
 printf("    Therefore clock rate of Y needs to be %.1fGHz\n\n", 
 clockSpeedOnY);
 
 printf("X: Cycle time=%.1fps, CPI=%.1f; Y: Cycle time=%.1fps, CPI=%.1f \n",
 cycleTimeOnX, cpiOnX, cycleTimeOnY, cpiOnY);
+
+
 
 printf("    So, CPU Time_X is IC x CPI_X x Cycle Time_X => IC x %.1fps \n", 
 (cycleTimeOnX*cpiOnX));
@@ -59,3 +61,6 @@ printf("        Therefore X is %.1f times faster than Y\n\n",
 	
 	return 0;
 }
+
+
+
