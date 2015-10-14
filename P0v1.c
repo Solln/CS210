@@ -1,6 +1,6 @@
 /**************************************************************************
  *
- * Filename: P0v1.c
+ * Filename: P1v1.c
  *
  * Synopsis: Practical 1
  * 
@@ -14,34 +14,53 @@
  *
  *          (Signed)_____________________________________(Darren Lowe)
  *
- * Version: See VERSION below
+ * Version: See History below
  *
  **************************************************************************/
 
 
-#define VERSION "p0 v1.0 by Duncan. Last update: 05/10/2014\n\n"
+#define VERSION "p1 v1.0 by Darren Lowe. Last update: 10/10/2015\n\n"
 
-#include <stdio.h>	/* Include standard library functions for I/O */
+#include <stdio.h>
 
 int main() {
-/* Add suitable variables here as part of Practial 1 */
-	printf(VERSION);	/* Might as well know who wrote this thing! */
 
-/* The following code is just a very simple template.
-   For Practical 1, the hard-wired constants in the printf()s will need to
-   be replaced by variables & (the results of) the performance calculations.
-   See [CS210_01_hw/18,21-24] for the equations.
- */
-	/* Example from CS210_01_hw/18 */
-	printf("10s on A, 15s on B. So A is 1.5 times faster than B\n\n");
-	/* Example from CS210_01_hw/22 */
-	printf("A: 2GHz clock, 10s CPU time; B: ?GHz clock, 6s CPU time\n");
-	printf("\tTherefore clock rate of B needs to be 4GHz\n\n");
-	/* Example from CS210_01_hw/24 */
-	printf("A: Cycle time=250ps, CPI=2.0; B: Cycle time=500ps, CPI=1.2\n");
-	printf("\tSo, CPU Time_A is IC x CPI_A x Cycle Time_A => IC x 500ps\n");
-	printf("\tSo, CPU Time_B is IC x CPI_B x Cycle Time_B => IC x 600ps\n");
-	printf("\t\tTherefore A is 1.2 times faster than B\n");
+float executeTimeOnX = 10, executeTimeOnY = 15, cpuTimeOnX = 10, cpuTimeOnY = 6;
+float clockSpeedOnX = 2.00, clockSpeedOnY = ((1.2*clockSpeedOnX)*10)/cpuTimeOnY;
+float cycleTimeOnX = 250, cycleTimeOnY = 500, cpiOnX = 2, cpiOnY = 1.2;
+
+
+printf(VERSION);	
+
+
+printf("%.1fs on X, %.1fs on Y. So X is %.1fs times faster than Y\n\n", 
+executeTimeOnX, executeTimeOnY, (executeTimeOnY/executeTimeOnX));
+
+printf("X: %.1fGHz clock, %.1fs CPU time; Y: ?GHz clock, %.1fs CPU time. \n",
+clockSpeedOnX, cpuTimeOnX, cpuTimeOnY);
+
+
+
+printf("    Therefore clock rate of Y needs to be %.1fGHz\n\n", 
+clockSpeedOnY);
+
+printf("X: Cycle time=%.1fps, CPI=%.1f; Y: Cycle time=%.1fps, CPI=%.1f \n",
+cycleTimeOnX, cpiOnX, cycleTimeOnY, cpiOnY);
+
+
+
+printf("    So, CPU Time_X is IC x CPI_X x Cycle Time_X => IC x %.1fps \n", 
+(cycleTimeOnX*cpiOnX));
+
+printf("    So, CPU Time_Y is IC x CPI_Y x Cycle Time_Y => IC x %.1f \n",
+(cycleTimeOnY*cpiOnY));
+
+printf("        Therefore X is %.1f times faster than Y\n\n", 
+(cycleTimeOnY*cpiOnY)/(cycleTimeOnX*cpiOnX));
+
 	
 	return 0;
 }
+
+
+
