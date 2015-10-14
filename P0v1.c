@@ -1,14 +1,23 @@
-/* This is a very simple template to form the basis of Practical 0.
-   Note: Students should replace the text of this comment by the documentation
-   requirements as set out in the Practical Guidelines to be found at:
-   http://classes.myplace.strath.ac.uk/mod/page/view.php?id=632583
-   Compilation:
-     To produce an executable file named p0v1_0 use:
-   gcc p0v1_0 -o p0v1_0
-     If you want to make sure your code is squeaky clean use
-     the compile time switches '-Wall -pedantic' as follows:
-   gcc p0v1_0.c -Wall -pedantic -o p0v1_0
- */
+/**************************************************************************
+ *
+ * Filename: P0v1.c
+ *
+ * Synopsis: Practical 1
+ * 
+ * Author:
+ *      Darren Lowe, Reg no: 201519214
+ *
+ * Group:
+ *      Thursday, 3-5
+ *
+ * Promise: I confirm that this submission is all my own work.
+ *
+ *          (Signed)_____________________________________(Darren Lowe)
+ *
+ * Version: See VERSION below
+ *
+ **************************************************************************/
+
 
 #define VERSION "p0 v1.0 by Duncan. Last update: 05/10/2014\n\n"
 
