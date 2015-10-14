@@ -39,12 +39,12 @@ float cpiOnX = 2, cpiOnY = 1.2;
 
 printf(VERSION);	
 
-printf("%fs on X, %fs on Y. So X is %f times faster than Y\n\n", executeTimeOnX, executeTimeOnY, (executeTimeOnY/executeTimeOnX));
+printf("%.1fs on X, %.1fs on Y. So X is %.1fs times faster than Y\n\n", executeTimeOnX, executeTimeOnY, (executeTimeOnY/executeTimeOnX));
 
-printf("X: %fGHz clock, %fs CPU time; Y: ?GHz clock, %fs CPU time. \n    Therefore clock rate of Y needs to be %fGHz\n\n", clockSpeedOnX, cpuTimeOnX, cpuTimeOnY, clockSpeedOnY);
+printf("X: %.1fGHz clock, %.1fs CPU time; Y: ?GHz clock, %.1fs CPU time. \n    Therefore clock rate of Y needs to be %.1fGHz\n\n", clockSpeedOnX, cpuTimeOnX, cpuTimeOnY, clockSpeedOnY);
 
-printf("X: Cycle time=%fps, CPI=%f; Y: Cycle time=%fps, CPI=%f \n    So, CPU Time_X is IC x CPI_X x Cycle Time_X => IC x %fps \n", cycleTimeOnX, cpiOnX, cycleTimeOnY, cpiOnY, (cycleTimeOnX*cpiOnX));
-printf("    So, CPU Time_Y is IC x CPI_Y x Cycle Time_Y => IC x %f \n        Therefore X is %f times faster than Y\n\n", (cycleTimeOnY*cpiOnY), (cycleTimeOnY*cpiOnY)/(cycleTimeOnX*cpiOnX));
+printf("X: Cycle time=%.1fps, CPI=%.1f; Y: Cycle time=%.1fps, CPI=%.1f \n    So, CPU Time_X is IC x CPI_X x Cycle Time_X => IC x %.1fps \n", cycleTimeOnX, cpiOnX, cycleTimeOnY, cpiOnY, (cycleTimeOnX*cpiOnX));
+printf("    So, CPU Time_Y is IC x CPI_Y x Cycle Time_Y => IC x %.1f \n        Therefore X is %.1f times faster than Y\n\n", (cycleTimeOnY*cpiOnY), (cycleTimeOnY*cpiOnY)/(cycleTimeOnX*cpiOnX));
 
 	
 	return 0;
