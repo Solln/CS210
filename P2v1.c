@@ -1,6 +1,6 @@
 /**************************************************************************
  *
- * Filename: P1v1.c
+ * Filename: P2v1.c
  *
  * Synopsis: Practical 1
  * 
@@ -60,35 +60,63 @@ Date:   Wed Oct 10 18:38:42 2015 +0100
 **************************************************************************/
 
 
-#define VERSION "p1 v1.0 by Darren Lowe. Last update: 10/10/2015\n\n"
+#define VERSION "p2 v1.0 by Darren Lowe. Last update: 10/10/2015\n\n"
 
 #include <stdio.h>
 
 int main() {
 
-float executeTimeOnX = 10, executeTimeOnY = 15, cpuTimeOnX = 10, cpuTimeOnY = 6;
-float clockSpeedOnX = 2.00, clockSpeedOnY = ((1.2*clockSpeedOnX)*10)/cpuTimeOnY;
-float cycleTimeOnX = 250, cycleTimeOnY = 500, cpiOnX = 2, cpiOnY = 1.2;
+float executeTimeOnX, executeTimeOnY, cpuTimeOnX, cpuTimeOnY;
+float clockSpeedOnX, clockSpeedOnY;
+float cycleTimeOnX, cycleTimeOnY, cpiOnX, cpiOnY;
 
 
 printf(VERSION);	
 
-
+printf("What is the execution time for machine X?");
+    scanf("%f", &executeTimeOnX);
+    
+printf("What is the execution time for machine Y?");
+    scanf("%f", &executeTimeOnY);
+    
 printf("%.1fs on X, %.1fs on Y. So X is %.1fs times faster than Y\n\n", 
 executeTimeOnX, executeTimeOnY, (executeTimeOnY/executeTimeOnX));
 
-printf("X: %.1fGHz clock, %.1fs CPU time; Y: ?GHz clock, %.1fs CPU time. \n",
-clockSpeedOnX, cpuTimeOnX, cpuTimeOnY);
+
+    
+    printf("What is the execution time of machine X?");
+    	scanf("%f", &cpuTimeOnX);
+    
+    printf("What is the clock rate (in GHz) of machine X?");
+    	scanf("%f", &clockSpeedOnX);
+    
+    printf("What is the execution time of machine Y?");
+    	scanf("%f", &cpuTimeOnY);
+    
+    clockSpeedOnY = ((1.2*clockSpeedOnX)*10)/cpuTimeOnY;
+
+	printf("X: %.1fGHz clock, %.1fs CPU time; Y: ?GHz clock, %.1fs CPU time. \n",
+	clockSpeedOnX, cpuTimeOnX, cpuTimeOnY);
+
+	printf("    Therefore clock rate of Y needs to be %.1fGHz\n\n", 
+	clockSpeedOnY);
 
 
 
-printf("    Therefore clock rate of Y needs to be %.1fGHz\n\n", 
-clockSpeedOnY);
+printf("What is the CPI of machine X?");
+    scanf("%f", &cpiOnX);
+    
+printf("What is the CPI of machine Y?");
+    scanf("%f", &cpiOnY);
+    
+printf("What is the cycle time of machine X?");
+    scanf("%f", &cycleTimeOnX);
+    
+printf("What is the cycle time of machine Y?");
+    scanf("%f", &cycleTimeOnY);
 
 printf("X: Cycle time=%.1fps, CPI=%.1f; Y: Cycle time=%.1fps, CPI=%.1f \n",
 cycleTimeOnX, cpiOnX, cycleTimeOnY, cpiOnY);
-
-
 
 printf("    So, CPU Time_X is IC x CPI_X x Cycle Time_X => IC x %.1fps \n", 
 (cycleTimeOnX*cpiOnX));
