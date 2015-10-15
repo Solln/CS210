@@ -93,7 +93,7 @@ cycleTimeOnX, cpiOnX, cycleTimeOnY, cpiOnY);
 printf("    So, CPU Time_X is IC x CPI_X x Cycle Time_X => IC x %.1fps \n", 
 (cycleTimeOnX*cpiOnX));
 
-printf("    So, CPU Time_Y is IC x CPI_Y x Cycle Time_Y => IC x %.1f \n",
+printf("    So, CPU Time_Y is IC x CPI_Y x Cycle Time_Y => IC x %.1fps \n",
 (cycleTimeOnY*cpiOnY));
 
 printf("        Therefore X is %.1f times faster than Y\n\n", 
@@ -101,7 +101,20 @@ printf("        Therefore X is %.1f times faster than Y\n\n",
 
 	
 	return 0;
+	
 }
+	
+/*
+PROGRAM OUTPUT - 
 
+10.0s on X, 15.0s on Y. So X is 1.5s times faster than Y
 
+X: 2.0GHz clock, 10.0s CPU time; Y: ?GHz clock, 6.0s CPU time. 
+    Therefore clock rate of Y needs to be 4.0GHz
+
+X: Cycle time=250.0ps, CPI=2.0; Y: Cycle time=500.0ps, CPI=1.2 
+    So, CPU Time_X is IC x CPI_X x Cycle Time_X => IC x 500.0ps 
+    So, CPU Time_Y is IC x CPI_Y x Cycle Time_Y => IC x 600.0ps 
+        Therefore X is 1.2 times faster than Y
+*/	
 
